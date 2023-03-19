@@ -1,0 +1,40 @@
+<div id="myCarousel" class="carousel slide carousel-fade" data-ride="carousel">
+    <div class="carousel-inner">
+        <div class="carousel-item active">
+            <div class="mask flex-center">
+                <div class="container">
+					<h2 class="title-homepage">Edit Post</h2>
+					<br>
+                    <div class="row align-items-center">
+                        <div class="col-md-7 col-12 order-md-1 order-2">
+							<form action="/posts/{{post._id}}/edit" method="POST" enctype="multipart/form-data">
+								<label>
+									<h1><p>Image</p></h1>
+									<input type="file" name="post-cover-image" class="form-control-file"/>
+									{{!-- <input class="heighttext" type="text" name="title" value="{{post.imageUrl}}" style="width: 700px;"/> --}}
+									{{!-- <input type="file" name="post-cover-image" class="form-control-file"/> --}}
+								</label>
+								<hr>
+								<label>
+									<h1><p>Title</p></h1>
+									<input class="heighttext" type="text" name="title" value="{{post.title}}" style="width: 700px;"/>
+								</label>
+								<hr>
+								<label>
+									<h1><p>Text</p></h1>
+									<input class="heighttext" type="text" name="text" value="{{post.text}}" style="width: 700px;"/>
+								</label>
+								
+								<hr>
+								<br />
+								<button class="btn-submit mr-2" type="submit">Save</button>
+								<a href="/posts/{{post._id}}">Go Back</a>
+							</form> 
+                        </div>
+                      <div class="col-md-5 order-md-2 order-1"><img src="{{post.imageUrl}}" class="mx-auto" alt="slide" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div> 
+</div>

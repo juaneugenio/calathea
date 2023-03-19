@@ -1,0 +1,89 @@
+<h2 class="title-homepage">Profile</h2>
+<div
+  class="container col col-xl-5 col-lg-7 col-md-8 col-sm-7 col-xs-7 justify-content-center text-center mb-4 mw-50 b-1px"
+>
+  <div class="card">
+    <div class="d-flexbox p-3">
+      <br />
+      <img
+        src="/images/UserProfileImg.png"
+        class="img-fluid rounded-start"
+        alt="User image"
+      />
+      {{! <form method="POST" action="/posts/create" enctype="multipart/form-data">
+        <div class="form-group">
+          <br />
+          <label><b>Image Profile:</b>
+            <input
+              type="file"
+              name="post-cover-image"
+              class="form-control-file"
+            />
+          </label>
+          <button class="btn btn-secondary mb-3" type="submit">Save</button>
+        </div>
+      </form> }}
+      <hr />
+    </div>
+    <div class="card-body">
+      <h3 class="card-title">{{user.username}}</h3>
+      <p class="card-text">{{user.location}}</p>
+      <p class="card-text">{{user.email}}</p>
+      <a href="/profile/update-profile" class="btn btn-secondary mb-3">Update
+        Profile</a>
+      <a href="/profile/update-password" class="btn btn-secondary mb-3">Update
+        Password</a>
+      <a href="/profile/delete-account" class="btn btn-danger mb-3">Delete
+        Account</a>
+    </div>
+    <div class="card-footer text-muted">
+      2 days ago
+    </div>
+  </div>
+
+</div>
+
+{{! Original links }}
+
+{{! <div>
+	<a href="/profile/update-profile">Update Profile</a>
+	<br />
+	<a href="/profile/update-password">Update Password </a>
+	<br />
+	<a href="/profile/delete-account">Delete Account</a>
+</div>
+
+<div>
+	<a href="/posts/create">Create a post</a>
+</div>
+<br /> }}
+
+{{! <h3>All Post list</h3> }}
+
+{{!-- <div class="row">
+  {{#each allPosts}}
+    <div class="col-md-4 mb-5">
+      <div class="card" style="width: 18rem;">
+        <img src="{{imageUrl}}" class="card-img-top" alt="{{title}}" />
+        <div class="card-body">
+          <h5 class="card-title">{{title}}</h5>
+          <p class="card-text">{{text}}</p>
+          <a
+            href="/posts/{{this._id}}"
+            class="btn btn-primary"
+          >{{this.text}}</a>
+        </div>
+      </div>
+    </div>
+  {{else}}
+    <p>There are no Posts yet!</p>
+  {{/each}}
+  <hr />
+</div> --}}
+
+{{!-- {{#each allPosts}}
+	<hr />
+	<a href="/posts/{{this._id}}">{{this.text}}</a>
+	<br />
+
+{{/each}} --}}

@@ -1,0 +1,215 @@
+{{!-- <h1>{{title}} 🚀</h1> --}}
+{{! <p>Welcome Ironhacker!</p>
+<p>Hola testing</p> }}
+
+{{! homepage }}
+{{#if user}}
+  <h2><p class="hello-title">Hello {{user.username}}!</p></h2>
+  <h2 class="underline-green hello-title"><b>Welcome to Calathea</b></h2>
+{{else}}
+  <div class="calltoaction-and-title">
+    <p class="title-homepage">C A L A T H E A.</p>
+    <p class="call-to-action">The best way to communicate with our community about
+      the plants we love</p>
+  </div>
+{{/if}}
+
+
+
+{{!-- Partial to display the floating button --}}
+{{>floatingButton}}
+
+
+{{!-- FUNCIONAL --}}
+
+<div class="container">
+  <div class="row ">
+    {{#each allPosts}}
+    <div class="col-md-4 col-sm-6 px-3 py-3">
+      <div class="product-grid2 h-auto">
+        <div class="product-image2 ">
+          <a href="/posts/{{this._id}}">
+            <img src="{{imageUrl}}" class="card-img-top h-50 " alt="{{title}}"
+            />
+        </div>
+        <div class="product-content text-align-left px-0 py-3">
+          <h3 class="title"><a href="/posts/{{this._id}}"><b>{{title}}.</b></a></h3>
+          <span class="description">{{text}}</span>
+        </div>
+      </div>
+    </div>
+    {{else}}
+    <p>Oh no! There are no Posts yet!</p>
+  {{/each}}
+  </div>
+</div>
+
+{{!-- GRID original de Anna --}}
+{{!-- <div class="container">
+  <div class="row">
+    <div class="col-md-4 col-sm-6">
+      <div class="product-grid2">
+        <div class="product-image2">
+          <a href="/">
+            <img
+              class="pic-1"
+              src="https://cdn.shopify.com/s/files/1/0056/8970/4482/products/plant4_1800x1800.jpg?v=1569305407"
+            />
+            <img
+              class="pic-2"
+              src="https://cdn.shopify.com/s/files/1/0056/8970/4482/products/IMG_9735WR_720x.jpg?v=1569305407"
+            />
+          </a>
+          <ul class="social">
+            <li><a href="" data-tip="Quick View"><i
+                  class="bi bi-eye"
+                ></i></a></li>
+          </ul>
+        </div>
+        <div class="product-content">
+          <h3 class="title"><a href="/"><b>Prayer Plant.</b></a></h3>
+          <span class="description">This distinctive plant has stunning green
+            <br />
+            leaves with red veins and pink undersides.</span>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4 col-sm-6">
+      <div class="product-grid2">
+        <div class="product-image2">
+          <a href="/">
+            <img
+              class="pic-1"
+              src="https://cdn.shopify.com/s/files/1/0056/8970/4482/products/chinese-money-plant-ga-v1_1800x1800.jpg?v=1623698448"
+            />
+            <img
+              class="pic-2"
+              src="https://cdn.shopify.com/s/files/1/0056/8970/4482/products/img_5903_1800x1800.jpg?v=1569309748"
+            />
+          </a>
+         <ul class="social">
+            <li><a href="/" data-tip="Quick View"><i
+                  class="fa fa-eye"
+                ></i></a></li>
+          </ul>
+        </div>
+        <div class="product-content">
+          <h3 class="title"><a href="/"><b>Chinese Money Plant.</b></a></h3>
+          <span class="description">This plant has beautiful bright green round
+            pad like leaves on succulent stems.
+          </span>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4 col-sm-6">
+      <div class="product-grid2">
+        <div class="product-image2">
+          <a href="/">
+            <img
+              class="pic-1"
+              src="https://cdn.shopify.com/s/files/1/0056/8970/4482/products/Hanging_509_720x.jpg?v=1621000319"
+            />
+            <img
+              class="pic-2"
+              src="https://cdn.shopify.com/s/files/1/0056/8970/4482/products/img_5897_720x.jpg?v=1569326768"
+            />
+          </a>
+          <ul class="social">
+            <li><a href="/public/images/eye-icon.png" data-tip="Quick View"><i
+                  class="fa fa-eye"
+                ></i></a></li>
+          </ul>
+        </div>
+        <div class="product-content">
+          <h3 class="title"><a href="/"><b>Bunny Ear Cactus.</b></a></h3>
+          <span class="description">A unique looking plant, the pads of this
+            <br />cactus can resemble bunny ears and its
+            <br />hair-like spines (glochids) look like fur.
+          </span>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4 col-sm-6">
+      <div class="product-grid2">
+        <div class="product-image2">
+          <a href="/">
+            <img
+              class="pic-1"
+              src="https://cdn.shopify.com/s/files/1/0056/8970/4482/products/B_D2_Day-2_21_RESIZED_720x.jpg?v=1613152211"
+            />
+            <img
+              class="pic-2"
+              src="https://cdn.shopify.com/s/files/1/0056/8970/4482/products/IMG_3104_1800x1800.jpg?v=1607015893"
+            />
+          </a>
+          <ul class="social">
+            <li><a href="/" data-tip="Quick View"><i
+                  class="fa fa-eye"
+                ></i></a></li>
+          </ul>
+        </div>
+        <div class="product-content">
+          <h3 class="title"><a href="/"><b>Ficus Ginseng.</b></a></h3>
+          <span class="description">With large roots and oval shaped leaves,
+            this is a member of the Mulberry family and is found across southern
+            Asia.</span>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4 col-sm-6">
+      <div class="product-grid2">
+        <div class="product-image2">
+          <a href="/">
+            <img
+              class="pic-1"
+              src="https://cdn.shopify.com/s/files/1/0056/8970/4482/products/Hanging_585_720x.jpg?v=1621000951"
+            />
+            <img
+              class="pic-2"
+              src="https://cdn.shopify.com/s/files/1/0056/8970/4482/products/Hanging_585_720x.jpg?v=1621000951"
+            />
+          </a>
+          <ul class="social">
+            <li><a href="/" data-tip="Quick View"><i
+                  class="fa fa-eye"
+                ></i></a></li>
+          </ul>
+        </div>
+        <div class="product-content">
+          <h3 class="title"><a href="/"><b>Rose Painted Calathea.</b></a></h3>
+          <span class="description">If it's stunning foliage you are looking
+            for, the Rose Painted Calathea is the plant for you!
+          </span>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4 col-sm-6">
+      <div class="product-grid2">
+        <div class="product-image2">
+          <a href="/">
+            <img
+              class="pic-1"
+              src="https://cdn.shopify.com/s/files/1/0056/8970/4482/products/Schefflera_4_720x.jpg?v=1607423347"
+            />
+            <img
+              class="pic-2"
+              src="https://cdn.shopify.com/s/files/1/0056/8970/4482/products/IMG_3661_720x.jpg?v=1607423347"
+            />
+          </a>
+          <ul class="social">
+            <li><a href="/public/images/eye-icon.png" data-tip="Quick View"><i
+                  class="fa fa-eye"
+                ></i></a></li>
+          </ul>
+        </div>
+        <div class="product-content">
+          <h3 class="title"><a href="/"><b>Schefflera Tree.</b></a></h3>
+          <span class="description">Umbrella Plant doesn't sound like the most
+            elegant name in the world, but this plant certainly has some grace
+            and sophistication about it.
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div> --}}

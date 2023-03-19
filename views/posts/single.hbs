@@ -1,0 +1,168 @@
+<div>
+  
+</div><div id="myCarousel" class="carousel slide carousel-fade" data-ride="carousel">
+  <div class="carousel-inner">
+    {{!-- <div class="carousel-item active"> --}}
+    <div class="active">
+      <div class=" mask flex-center">
+        <div class="container">
+          <h2 class="title-homepage">POST</h2>
+          <br />
+          <div class="row align-items-center">
+            <div class="col-md-7 col-8 order-md-1 order-2">
+              {{#if post.title}}
+              <h4>{{post.title}}</h4>
+              <br />
+              {{/if}}
+              <p>by
+                {{#if post.author}}
+                {{post.author.username}}
+                {{else}}
+                Oh no! This User doesn't exist anymore.
+                {{/if}}
+              </p>
+              <hr />
+              <br />
+              <p>{{post.text}}</p>
+              <br /><br />
+              <hr />
+              {{#if isAuthor}}
+              <div class="small d-flex justify-content-end">
+              <a href="/posts/{{post._id}}/edit" class="d-flex align-items-center me-3">
+                <i class="bi bi-pencil-square mr-2"></i>
+                <p class="text-primary mb-0 mr-3">Edit Post</p>
+              </a>
+              <a href="/posts/{{post._id}}/delete" class="d-flex align-items-center me-3">
+                <i class="bi bi-trash-fill mr-2"></i>
+                <p class="text-primary mb-0">Delete Post</p>
+              </a>
+            </div>
+              {{/if}}
+              <br />
+              <div class="btn-submit"><a href="/">Go Back</a></div>
+            </div>
+            <div class="col-md-5 order-md-1 order-1"><img src="{{post.imageUrl}}" class="mx-auto" alt="slide" />
+            </div>
+          </div>
+        </div>
+    </div>
+  </div>
+</div>
+<div>
+  {{!-- NEW and FUNCTIONAL section COMMENTS --}}
+  
+<section style="bodypost background-color: #fff;">
+  <br> <br> <br>
+  <h2 class="title-homepage">Comments</h2>
+  <div class="container my-5 py-5">
+    <div class="bodypost row d-flex justify-content-center">
+      <div class="card col-md-9 col-lg-9 col-xl-15">
+        <div class="container">
+          <div class="card-body">
+            <div class="d-flex flex-start align-items-center">
+              {{!-- <img
+                class="rounded-circle shadow-1-strong mr-3"
+                src="https://mdbootstrap.com/img/Photos/Avatars/img%20(19).jpg"
+                alt="avatar"
+                width="60"
+                height="60"
+              /> --}}
+              {{!-- <div>
+                {{#if post.title}}
+                  <h3>{{post.title}}</h3>
+                {{/if}}
+                <p>by: {{#if post.author}}
+                {{post.author.username}}
+                {{else}}
+                  Oh no! This User doesn't exist anymore.</p>
+                {{/if}}
+              </div>
+            </div>
+            
+            <p>{{post.text}}</p> --}}
+          </div>
+          <div class="card-footer py-3 border-0" style="background-color: #fff;">
+            <div class="d-flex flex-start w-100">
+              <img
+                class="rounded-circle shadow-1-strong me-3 mr-3"
+                src="\images\UserProfileImg.png"
+                alt="avatar"
+                width="40"
+                height="40"
+              />
+              <div class="form-outline w-100">
+                <form method="POST" action="/comments/{{post._id}}/new">
+                <textarea
+                  class="form-control"
+                  name="text"
+                  type="text"
+                  id="textAreaExample"
+                  placeholder="Write your comment"
+                  rows="4"
+                  style="background: #fff;"
+                ></textarea>
+            <div class="small d-flex justify-content-end mt-3 mb-4">
+              <button type="submit" class="btn btn-primary btn-sm mr-3">Post comment</button>
+              <a class="btn btn-outline-primary btn-sm" href="/">Cancel</a>
+            </div>
+                </form>
+              </div>
+            </div>
+            {{#if post.comments}}
+              <section class="comments">
+              <h3>Comments:</h3>
+              <br>
+              {{#each post.comments}}
+              <div style="font-size: .8rem; margin: 0">by: {{a.user}}</div>
+              <p style="margin: 1rem">{{this.text}}</p>
+                {{#if this.isAuthor}}
+              <div class="small d-flex justify-content-end">
+              <a href="/comments/{{../post._id}}/{{this._id}}/delete" class="d-flex align-items-center me-3">
+                <i class="bi bi-trash-fill mr-2"></i>
+                <p class="text-primary mb-0">delete</p>
+              </a>
+            </div>
+              {{/if}}
+            <hr>
+            {{/each}}
+            </section>
+          {{/if}} 
+          <br><br>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+</div>
+
+
+
+
+
+{{!-- 
+<form method="POST" action="/comments/{{post._id}}/new">
+  <br /><br />
+  <h2>Add new comment</h2>
+  <label>
+    <input type="text" placeholder="Write your comment" name="text" />
+  </label>
+  <button type="submit">Submit</button>
+</form>
+
+{{#if post.comments}}
+<section class="comments">
+  <p>Comments:</p>
+  {{#each post.comments}}
+  <div style="font-size: .8rem; margin: 0">by:
+    {{this.author.username}}</div>
+  <p style="margin: 1rem">{{this.text}}</p>
+  {{#if this.isAuthor}}
+  <a 
+    href="/comments/{{../post._id}}/{{this._id}}/delete"
+    style="color: red"
+    >Delete comment</a>
+  {{/if}}
+  {{/each}}
+  </section>
+{{/if}} --}}
