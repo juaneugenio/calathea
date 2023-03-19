@@ -17,32 +17,34 @@
 
 
 {{!-- Partial to display the floating button --}}
-{{>floatingButton}}
+{{!-- {{>floatingButton}} --}}
 
 
 {{!-- FUNCIONAL --}}
 
-<div class="container">
-  <div class="row ">
+<div class="container ">
+  <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4 "> 
     {{#each allPosts}}
-    <div class="col-md-4 col-sm-6 px-3 py-3">
-      <div class="product-grid2 h-auto">
-        <div class="product-image2 ">
+    <div class="col border-dark mb-3" >
+
+      <div class="card "  >
           <a href="/posts/{{this._id}}">
-            <img src="{{imageUrl}}" class="card-img-top h-50 " alt="{{title}}"
+            <img src="{{imageUrl}}" class="card-img-top" alt="{{title}}"
             />
-        </div>
-        <div class="product-content text-align-left px-0 py-3">
-          <h3 class="title"><a href="/posts/{{this._id}}"><b>{{title}}.</b></a></h3>
-          <span class="description">{{text}}</span>
+      
+        <div class="card-body">
+            <a href="/posts/{{this._id}}"><h3 class="card-title">{{title}}</h3></a>
+          <p class="card-text">{{text}}</p>
         </div>
       </div>
     </div>
-    {{else}}
-    <p>Oh no! There are no Posts yet!</p>
-  {{/each}}
+
+       {{else}}
+          <p>Oh no! There are no Posts yet!</p>
+      {{/each}}
+    </div>
   </div>
-</div>
+
 
 {{!-- GRID original de Anna --}}
 {{!-- <div class="container">

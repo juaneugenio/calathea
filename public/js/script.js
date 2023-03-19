@@ -1,7 +1,9 @@
+/** @format */
+
 document.addEventListener(
-  "DOMContentLoaded",
-  () => {
-    console.log("project2 JS imported successfully!");
-  },
-  false
+	"DOMContentLoaded",
+	() => {
+		console.log("Calathea app JS imported successfully!");
+	},
+	false,
 );
