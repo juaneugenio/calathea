@@ -10,7 +10,7 @@ const mongoose = require("mongoose");
 const MONGO_URI = require("../utils/consts");
 
 mongoose
-	.connect(MONGO_URI)
+	.connect(MONGO_URI, { autoIndex: false })
 	.then((x) => {
 		console.log(`Connected to Mongo! Database name: "${x.connections[0].name}"`);
 	})
